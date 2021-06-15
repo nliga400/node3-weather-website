@@ -14,7 +14,7 @@ const geocode = (address = 'New York' , callback) => {
            callback(undefined,{
                 latitude: body.features[0].center[1],
                 longitude: body.features[0].center[0],
-                location: body.features[0].place_name 
+                location: body.features[0].place_name
            })
         }
     })

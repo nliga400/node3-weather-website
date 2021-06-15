@@ -8,7 +8,7 @@ weatherForm.addEventListener('submit', (e) =>{
 
     const location = searchElements.value
 
-    messageOne.textContent = 'Loading.. .'
+    messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
     fetch('/weather?address='+encodeURIComponent(location)).then((response) => {
@@ -21,7 +21,7 @@ weatherForm.addEventListener('submit', (e) =>{
             console.log(data.location)
             console.log(data.forecast)
             messageOne.textContent = data.location
-            messageTwo.textContent = data.forecast.weather_description + ', temperature is ' + data.forecast.temperature + ' and it feels like ' + data.forecast.feelslike
+            messageTwo.textContent = data.forecast.weather_description + ', temperature is ' + data.forecast.temperature + ' and it feels like ' + data.forecast.feelslike + ' and the humidity is ' + data.forecast.humidity + '%'
         }
     })
 })
